@@ -22,9 +22,6 @@ public class City implements Serializable {
 
     private String name;
 
-    @Column(name = "tenant_id")
-    private String tenantId;
-
     public City setId(Long id) {
         this.id = id;
         return this;
@@ -35,10 +32,6 @@ public class City implements Serializable {
         return this;
     }
 
-    public City setTenantId(String tenantId) {
-        this.tenantId = tenantId;
-        return this;
-    }
 
     public Long getId() {
         return id;
@@ -46,10 +39,6 @@ public class City implements Serializable {
 
     public String getName() {
         return name;
-    }
-
-    public String getTenantId() {
-        return tenantId;
     }
 }
 
