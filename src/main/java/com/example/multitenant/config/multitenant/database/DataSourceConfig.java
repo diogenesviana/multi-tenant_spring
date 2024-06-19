@@ -7,7 +7,7 @@ import jakarta.persistence.*;
 import java.io.Serializable;
 
 @Entity
-@Table(name = "DataSourceConfig")
+@Table(name = "datasourceconfig")
 @JsonIgnoreProperties(ignoreUnknown = true)
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class DataSourceConfig implements Serializable {

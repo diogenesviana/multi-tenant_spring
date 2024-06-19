@@ -11,16 +11,17 @@ import org.springframework.web.bind.annotation.*;
 import java.sql.SQLException;
 import java.util.List;
 
-@RestController(value = "/city")
+@RestController
+@RequestMapping("/city")
 public class CityController {
 
     @Autowired
     private CityService cityService;
 
-    @RequestMapping(value = "/", method = RequestMethod.POST)
-    public ResponseEntity<?> save(@RequestBody City city) {
+    @PostMapping
+    public ResponseEntity<Void> update(@RequestBody City city) {
         cityService.save(city);
-        return new ResponseEntity<>(HttpStatus.OK);
+        return ResponseEntity.noContent().build();
     }
 
     @RequestMapping(value = "/", method = RequestMethod.GET)
