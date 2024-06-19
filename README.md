@@ -2,7 +2,7 @@
 # Aplicação Spring Boot Multi-Tenant com PostgreSQL
 
 ## Visão Geral
-Este projeto é uma aplicação Spring Boot que demonstra uma arquitetura multi-tenant usando PostgreSQL. A aplicação é projetada para suportar múltiplos tenants, mantendo bancos de dados separados para cada um. Ela fornece uma base para construir aplicações multi-tenant escaláveis, de fácil manutenção e seguras.
+Este projeto é uma aplicação Spring Boot que demonstra uma arquitetura multi-tenant usando MySql. A aplicação é projetada para suportar múltiplos tenants, mantendo bancos de dados separados para cada um. Ela fornece uma base para construir aplicações multi-tenant escaláveis, de fácil manutenção e seguras.
 
 ### Funcionalidades
 * Suporte a Multi-Tenant: Bancos de dados separados para cada tenant.
