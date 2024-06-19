@@ -11,4 +11,4 @@ CREATE TABLE if not exists manager.datasourceconfig (
     );
 
 INSERT INTO manager.datasourceconfig VALUES (1, 'com.mysql.cj.jdbc.Driver', 'jdbc:mysql://localhost:3307/tenant1_db?ApplicationName=MultiTenant', 'tenant1_db', 'root', 'root', true);
-INSERT INTO manager.datasourceconfig VALUES (2, 'com.mysql.cj.jdbc.Driver', 'jdbc:mysql://localhost:3308/tenant2_db?ApplicationName=MultiTenant', 'tenant2_db', 'root', 'root', true);
+INSERT INTO manager.datasourceconfig VALUES (2, 'com.mysql.cj.jdbc.Driver', 'jdbc:mysql://localhost:3308/tenant2_db?ApplicationName=MultiTenantt', 'tenant2_db', 'root', 'root', true);

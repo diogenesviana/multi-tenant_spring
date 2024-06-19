@@ -1,0 +1,53 @@
+version: '3'
+services:
+  db1:
+    image: mysql:latest
+    container_name: manager
+    ports:
+      - "3306:3306"
+    environment:
+      - MYSQL_ROOT_PASSWORD:${MYSQL_ROOT_PASSWORD:-root}
+      - MYSQL_DATABASE:${MYSQL_DATABASE:-manager}
+    volumes:
+      - ./init-manager.sql:/docker-entrypoint-initdb.d/init-manager.sql
+
+  tenant1:
+    image: mysql:latest
+    container_name: tenant1
+    ports:
+      - "3307:3306"
+    environment:
+      - MYSQL_ROOT_PASSWORD=${MYSQL_ROOT_PASSWORD:-root}
+      - MYSQL_DATABASE=tenant1_db
+      - sql_mode=''
+    volumes:  
+      - ./init-tenant1.sql:/docker-entrypoint-initdb.d/init-tenant1.sql  
+
+  tenant2:
+    image: mysql:latest
+    container_name: tenant2
+    ports:
+      - "3308:3306"
+    environment:
+      - MYSQL_ROOT_PASSWORD=${MYSQL_ROOT_PASSWORD:-root}
+      - MYSQL_DATABASE=tenant2_db
+      - sql_mode=''
+    volumes:  
+      - ./init-tenant2.sql:/docker-entrypoint-initdb.d/init-tenant2.sql  
+
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: java-app-multi-tenant
+    restart: always
+    depends_on:
+      - db1
+      - tenant2
+      - tenant1
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:mysql://db1:3306/${MYSQL_DATABASE:-manager}
+      SPRING_DATASOURCE_USERNAME: ${MYSQL_USER:-root}
+      SPRING_DATASOURCE_PASSWORD: ${MYSQL_PASSWORD:-root}
+    ports:
+      - "8080:8080"

@@ -1,6 +1,6 @@
-CREATE SCHEMA IF NOT EXISTS tenant2_db;
+CREATE SCHEMA IF NOT EXISTS cliente02;
 
-create table tenant2_db.city(
+create table cliente02.city(
                                id bigint not null auto_increment primary key,
                                name varchar(200)
 );
