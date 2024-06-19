@@ -6,7 +6,7 @@ Este projeto é uma aplicação Spring Boot que demonstra uma arquitetura multi-
 
 ### Funcionalidades
 * Suporte a Multi-Tenant: Bancos de dados separados para cada tenant.
-* Integração com PostgreSQL: Utiliza o PostgreSQL como banco de dados principal.
+* Integração com MySql: Utiliza o MySql como banco de dados principal.
 * Troca Dinâmica de Banco de Dados: Muda dinamicamente o banco de dados com base no tenant.
 * Segurança e Isolamento de Dados: Identificação segura dos tenants e isolamento de dados.
 * API RESTful: Endpoints para gerenciamento de dados dos tenants.
@@ -14,6 +14,6 @@ Este projeto é uma aplicação Spring Boot que demonstra uma arquitetura multi-
 ### Tecnologias Utilizadas
 * Spring Boot
 * Spring Data JPA
-* PostgreSQL
+* MySql
 * Hibernate
 * Maven
